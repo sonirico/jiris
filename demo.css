@@ -94,3 +94,7 @@ footer {
     height: 10px;
     border: 1px solid darkgray;
 }
+
+.white {
+    color: white;
+}
