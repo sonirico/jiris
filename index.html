@@ -9,7 +9,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="./demo.css" />
     <link rel="stylesheet" href="./jiris.css" />
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,46 +17,21 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <style>
-      header {
-        margin-top: 50px;
-      }
-
-      .ok {
-
-      }
-
-      .excess {
-        background-color: #f9f2f4;
-        color: #c7254e;
-      }
-
-      footer {
-        position: fixed;
-        padding-top: 10px;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: #f5f5f5;
-        font-size: 11px;
-      }
-    </style>
   </head>
   <body>
 
-    <div class="container" >
+    <div class="container-fluid" >
       
       <header class="row" >
         <div class="col-md-3" ></div>
         
-        <div class="col-md-6" >
+        <div class="col-md-6 text-center" >
           
-          <h1 class="text-center" >Jiris</h1>
+          <h1>Jiris</h1>
 
           <p>
             Jiris is a jQuery plugin intended to style the contents of elements marked as 
-            editable (<code>contenteditable="true"</code>) in a very customizable way.
+            editable (<code>contenteditable="true"</code>) in a <strike>very</strike> customizable way.
           </p>
 
         </div>
@@ -64,11 +39,55 @@
         <div class="col-md-3" ></div>
       </header>
       
-      <div class="row">
-        <div class="col-md-3" >     
+      <h2 class="text-center" ><a class="" name="demo" ></a>Demo</h2>
+
+      <div class="row" id="demo" >
+        
+
+        <div class="col-md-6" id="demo-form" >     
+          <form id="demo-form" >
+            <div class="form-group" >
+              <div class="row" >
+                <div class="col-xs-12" id="length">                  
+                  <div class="len-row" id="len-row-template" >
+                    <div class="row" >
+                      <div class="col-sm-2" ></div>
+                      <div class="col-sm-3" >
+                          <input type="number" class="form-control seg-len"  value="10" />
+                      </div>
+                      <div class="col-sm-3" >
+                        <select  class="form-control seg-class" >
+                          <option value="none" selected>-- css class --</option>
+                          <option value="neutral">neutral</option>
+                          <option value="warning">warning</option>
+                          <option value="danger">danger</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-3" >
+                        <select class="form-control seg-tags" >
+                          <option value="span" selected>&lt;span&gt;</option>
+                          <option value="em">&lt;em&gt;</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-1" >
+                        <button type="button" title="Remove segment"
+                           class="btn btn-xs btn-danger remove-row" role="button" style="display: none">
+                          <span class="glyphicon glyphicon-trash" ></span>
+                        </button>
+                        <button type="button" title="Add segment"
+                           class="btn btn-xs btn-primary add-row" role="button" >
+                          <span class="glyphicon glyphicon-plus" ></span>
+                        </button>
+                      </div>
+                    </div>                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>  
         </div>
-        <div class="col-md-6" >
-          <h2 class="text-center" ><a class="" name="demo" ></a>Demo</h2>
+
+        <div class="col-md-6" id="sample-container" >
 
           <div id="sample" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
             Truth to be said, this funcionality had to be performed at work, so
@@ -76,8 +95,19 @@
             well as an inmature API.
           </div>
 
+          <div id="code-preview-container">
+            <pre id="code-preview">
+            </pre>
+
+            <button type="button"  data-copytarget="#code-preview"
+                class="btn btn-xs btn-default clipboard" id="clipboard-button" role="button" >
+              <span class="glyphicon glyphicon-copy" ></span>
+            </button>
+            <div class="clearfix" ></div>
+          </div>
+          
         </div>
-        <div class="col-md-3" ></div>
+
       </div>
 
       <div class="row" id="downloads" >
@@ -85,10 +115,16 @@
         <div class="col-md-6" >
           <h4 class="text-center"><a name="downloads" class="" ></a>Downloads</h4>
 
-          <p>
-            Latest version available is: <strong>v0.0.1</strong> (sic)
-            <a href="#" >Download tarball</a>
-          </p>
+          <ul>
+            <li>
+              Latest version available is: <strong>v0.0.1</strong> (sic)
+              <a href="https://github.com/sonirico/jiris/archive/v0.0.1.tar.gz" >Download tarball</a>.
+            </li>
+            <li>
+              Keep track of all changes by cloning/forking the current 
+              <a href="https://github.com/sonirico/jiris.git" >development version</a>.
+            </li>
+          </ul>
           
           <p>
           </p>
@@ -102,7 +138,7 @@
           <h4 class="text-center"><a class="" name="support" ></a>Support</h4>
 
           <p>
-            Please note that this plugin is still at a early stage. API is liable to change as 
+            Please note that this plugin is still at an early stage. API is liable to change as 
             more people suggest enhacements and new features.
           </p>
         </div>
@@ -135,18 +171,8 @@
 
       $.fn.jiris.debugMode = true;
 
-      $(document).ready(function () {
-      
-          $('#sample').jiris({
-            'segments': [
-              {'len': 140, 'className' : 'ok', tag: 'span'},
-              {'len': 60, 'className' : 'excess', tag: 'em'}              
-            ]
-          }).focus();
-      
-      });
-
     </script>
+    <script src="./demo.js" ></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
