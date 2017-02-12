@@ -73,3 +73,24 @@ footer {
     top: 0;
     right: 0;
 }
+
+#css-styles
+{
+    padding-top: 30px;
+    width: 100%;
+    clear: both;
+}
+
+#css-styles ul,
+#css-styles ul li
+{
+    list-style: none;
+    padding-left: 0;
+}
+
+.color {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid darkgray;
+}
