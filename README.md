@@ -27,17 +27,17 @@ Code
 ```
 
 ```javascript
-    var config = {
-        'segments': [
-            {'len': 140, 'className': 'ok', 'tag': 'span'},
-            {'len': 200, 'className': 'excess', 'tag': 'em'}
-        ]
-    };
+var config = {
+   'segments': [
+       {'len': 140, 'className': 'ok', 'tag': 'span'},
+       {'len': 200, 'className': 'excess', 'tag': 'em'}
+   ]
+};
 
     $('#sample').jiris(config);
 ```
 
-## Aditional/Default configuration
+## Additional/Default configuration
 
 ```javascript
 $.fn.jiris.debugMode = false;
