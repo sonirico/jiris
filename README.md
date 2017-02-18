@@ -1,6 +1,7 @@
 # Jiris
 
 Have you ever noticed that some apps set a different style to text excess in a form-like element? E.g: like Twitter, when the well-known 140 are exceeded, the background of the over-140 text is red. This inmature plugin intends to provide that functionality.
+[Check out online working demo](https://sonirico.github.io/jiris/)
 
 ## Screenshot
 
@@ -26,17 +27,17 @@ Code
 ```
 
 ```javascript
-    var config = {
-        'segments': [
-            {'len': 140, 'className': 'ok', 'tag': 'span'},
-            {'len': 200, 'className': 'excess', 'tag': 'em'}
-        ]
-    };
+var config = {
+   'segments': [
+       {'len': 140, 'className': 'ok', 'tag': 'span'},
+       {'len': 200, 'className': 'excess', 'tag': 'em'}
+   ]
+};
 
     $('#sample').jiris(config);
 ```
 
-## Aditional/Default configuration
+## Additional/Default configuration
 
 ```javascript
 $.fn.jiris.debugMode = false;

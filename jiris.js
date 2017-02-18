@@ -7,7 +7,7 @@
     var settings = $.extend({}, $.fn.jiris.defaults, options);        
     var that = initialize(this, settings);
 
-    that.on('input', function (e) {
+    that.on('keyup', function (e) {
       var position = getCaretCharacterOffsetWithin(that.get(0));
 
       process(that, settings);
@@ -25,7 +25,7 @@
   }
 
   function process (that, settings) {
-    var text = that.text().replace(/^\s*/, '');
+    var text = that.text();
     var text_length = text.length;
     var sub_elements_arr = [];
     var index = 0;  
@@ -55,7 +55,15 @@
       sub_elements_arr.push(
         $('<' + settings.segments[0].tag + '>')
         .text(text.substr(index, text.length))
-      )
+      );
+
+      if ($.fn.jiris.debugMode) {
+        debug({
+          'index': index,
+          'len': len,
+          'segment': '<' + text.substr(index, len) + '>'
+        });
+      }
     }
 
     that.html(sub_elements_arr);
