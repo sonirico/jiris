@@ -71,7 +71,7 @@ function loadSample () {
         var seg_row = {};
 
         var seg_len = parseInt($that.find('.seg-len').val().trim());
-        if (isNaN(seg_len) || seg_len < 0) {
+        if (isNaN(seg_len) || seg_len <= 0) {
             return true;
         } else {
             seg_row['len'] = seg_len;
